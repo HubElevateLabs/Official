@@ -39,8 +39,8 @@
         .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; } 
         .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--black); }
         
-        /* ── HERO AJUSTADO (Remove o espaço preto gigante) ── */ 
-        .hero { min-height: auto; display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; overflow: hidden; } 
+        /* ── HERO CORRIGIDO ── */ 
+        .hero { min-height: auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; overflow: hidden; background: var(--off-white); } 
         .hero-left { background: var(--off-white); padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; } 
         .hero-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--graphite-light); margin-bottom: 22px; } 
         .hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--graphite-light); } 
@@ -53,7 +53,18 @@
         .btn-ghost { background: transparent; color: var(--black); padding: 13px 28px; font-size: 14px; font-weight: 600; border-radius: 4px; text-decoration: none; border: 1.5px solid var(--black); transition: all 0.2s; display: inline-block; } 
         .btn-ghost:hover { background: var(--black); color: var(--white); }
         
-        .hero-right { background: var(--black); display: flex; flex-direction: column; justify-content: center; padding: 80px 56px; position: relative; overflow: hidden; height: 100%; } 
+        .hero-right { 
+            background: var(--black); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            padding: 60px 56px; 
+            position: relative; 
+            overflow: hidden; 
+            max-height: fit-content;
+            margin: 40px;
+            border-radius: 12px;
+        } 
         .hero-right::before { content: '"'; position: absolute; top: 40px; left: 48px; font-family: 'Playfair Display', serif; font-size: 200px; line-height: 1; color: rgba(255,255,255,0.04); pointer-events: none; } 
         .hero-quote { font-family: 'Playfair Display', serif; font-size: clamp(20px, 2.5vw, 30px); font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.45; margin-bottom: 20px; } 
         .hero-quote-author { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; } 
@@ -95,7 +106,6 @@
         .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; } 
         .cat-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; padding: 28px 20px; text-align: center; transition: all 0.25s; cursor: default; } 
         .cat-card:hover { border-color: var(--black); box-shadow: 0 8px 28px rgba(0,0,0,0.09); transform: translateY(-4px); } 
-        .cat-icon { font-size: 38px; display: block; margin-bottom: 12px; } 
         .cat-card h3 { font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 6px; } 
         .cat-card p { font-size: 13px; color: var(--graphite-light); line-height: 1.55; } 
         .cat-tag { display: inline-block; margin-top: 12px; background: var(--gray-100); color: var(--graphite-mid); font-size: 11px; font-weight: 700; letter-spacing: 0.5px; padding: 3px 10px; border-radius: 10px; }
@@ -278,13 +288,13 @@
         <h2 class="s-title">Our Gift<br><em>Collections</em></h2> 
         <p class="s-sub">Thoughtfully organized collections for every person and every occasion — so you can always find the perfect gift.</p> 
         <div class="cat-grid"> 
-            <div class="cat-card"> <span class="cat-icon">🏠</span> <h3>Home & Décor</h3> <p>Decorative items that transform spaces and make any environment more welcoming and special.</p> <span class="cat-tag">Lifestyle</span> </div> 
-            <div class="cat-card"> <span class="cat-icon">🎒</span> <h3>Backpacks & Bags</h3> <p>Functional and stylish designs for everyday use, travel, and gifting with practicality and flair.</p> <span class="cat-tag">Accessories</span> </div> 
-            <div class="cat-card"> <span class="cat-icon">✍️</span> <h3>Stationery</h3> <p>Notebooks, planners, pens, and creative kits for those who love organization and expressive writing.</p> <span class="cat-tag">Creativity</span> </div> 
-            <div class="cat-card"> <span class="cat-icon">🖼️</span> <h3>Photo Frames</h3> <p>Elegant and personalized frames to preserve cherished memories with style and warmth.</p> <span class="cat-tag">Memories</span> </div> 
-            <div class="cat-card"> <span class="cat-icon">🍼</span> <h3>Bottles & Mugs</h3> <p>Thermal bottles, mugs, and personalized cups that accompany every moment of the day.</p> <span class="cat-tag">Everyday</span> </div> 
-            <div class="cat-card"> <span class="cat-icon">💡</span> <h3>Lighting & Lamps</h3> <p>Decorative and functional lamps that create unique atmospheres in any room.</p> <span class="cat-tag">Décor</span> </div> 
-            <div class="cat-card"> <span class="cat-icon">✨</span> <h3>Zodiac Signs</h3> <p>Themed and personalized gifts for every zodiac sign — unique, fun, and full of meaning.</p> <span class="cat-tag">Personalized</span> </div> 
+            <div class="cat-card"> <h3>Home & Décor</h3> <p>Decorative items that transform spaces and make any environment more welcoming and special.</p> <span class="cat-tag">Lifestyle</span> </div> 
+            <div class="cat-card"> <h3>Backpacks & Bags</h3> <p>Functional and stylish designs for everyday use, travel, and gifting with practicality and flair.</p> <span class="cat-tag">Accessories</span> </div> 
+            <div class="cat-card"> <h3>Stationery</h3> <p>Notebooks, planners, pens, and creative kits for those who love organization and expressive writing.</p> <span class="cat-tag">Creativity</span> </div> 
+            <div class="cat-card"> <h3>Photo Frames</h3> <p>Elegant and personalized frames to preserve cherished memories with style and warmth.</p> <span class="cat-tag">Memories</span> </div> 
+            <div class="cat-card"> <h3>Bottles & Mugs</h3> <p>Thermal bottles, mugs, and personalized cups that accompany every moment of the day.</p> <span class="cat-tag">Everyday</span> </div> 
+            <div class="cat-card"> <h3>Lighting & Lamps</h3> <p>Decorative and functional lamps that create unique atmospheres in any room.</p> <span class="cat-tag">Décor</span> </div> 
+            <div class="cat-card"> <h3>Zodiac Signs</h3> <p>Themed and personalized gifts for every zodiac sign — unique, fun, and full of meaning.</p> <span class="cat-tag">Personalized</span> </div> 
         </div> 
     </div>
 </section>
@@ -371,7 +381,7 @@
                     </select> 
                 </div> 
                 <div class="f-field"><label for="message">Message</label><textarea id="message" placeholder="Tell us how we can help you..."></textarea></div> 
-                <button type="submit" class="form-submit">Send Message →</button> 
+                <button type="submit" class="form-submit">Send Message -></button> 
             </form> 
         </div> 
     </div>
@@ -457,7 +467,7 @@
         btn.textContent = ' Message Sent!'; 
         btn.style.background = '#2a7a4a'; 
         setTimeout(() => { 
-            btn.textContent = 'Send Message →'; 
+            btn.textContent = 'Send Message ->'; 
             btn.style.background = ''; 
             e.target.reset(); 
         }, 3000); 
